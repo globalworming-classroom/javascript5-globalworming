@@ -35,13 +35,17 @@ there are workarounds, check stackoverflow :)
 
     const runScript = () => {
         // persons
-        const atom = {"name": "atom"};
+        const atom = {
+            "name": "atom"
+        };
         const thunder = {"name": "thunder"};
         const antimatter = {"name": "antimatter" };
         const lightning = {"name": "lightning" };
 
         // organisations
-        const gdi = {"orgName": "GDI"}
+        const gdi = {
+            "orgName": "GDI"
+        }
         const nod = {"orgName": "NOD"}
         const fid = {"orgName": "FID"}
 
@@ -49,7 +53,10 @@ there are workarounds, check stackoverflow :)
         const organisationToMembers = new Map([
             [gdi, [atom, lightning]]
         ])
-        organisationToMembers.set(fid, [antimatter, lightning])
+        let key = fid;
+        let value = [antimatter, lightning];
+        organisationToMembers.set(key, value)
+        organisationToMembers.set(nod, [thunder, antimatter, lightning])
 
         // print
         renderOrganisations(organisationToMembers);
@@ -73,7 +80,7 @@ there are workarounds, check stackoverflow :)
 <script src="test.js"></script>
 
 <div id="displayOnSuccess" hidden="hidden">
-    <a href="./2.html">next exercise</a>
+    <a href="./3.html">next exercise</a>
 </div>
 
 <!-- fancy code highlighting -->
